@@ -11,3 +11,7 @@ const app = createApp(App)
 app.use(Antd)
 app.mount('#app')
 
+window.addEventListener('load', () => {
+  const loader = document.getElementById('loader-wrapper')
+  if (loader) loader.remove()
+})
