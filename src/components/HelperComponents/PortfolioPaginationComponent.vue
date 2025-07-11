@@ -9,7 +9,7 @@ const portfolioInformation = reactive([
       img: "/PortfolioImages/STARBOI.jpg",
     },
     ProjectName: "STARBOI",
-    Description: "Starboi — ijodkorlik va texnik mahoratning mukammal uyg‘unligi. Ushbu portfolio sayti zamonaviy dizayn va intuitiv interfeys orqali Starboi'ning montaj san'atiga bo‘lgan yondashuvini namoyon etadi. Saytda uning eng yaxshi ishlari, kreativ video loyihalari va xizmatlari jamlangan. Har bir sahifa — bu montajda ustalik, tafakkurda original yondashuv va harakatdagi hikoya.",
+    Description: "STARBOI — ijodkorlik va texnik mahoratning mukammal uyg‘unligi. Ushbu portfolio sayti zamonaviy dizayn va intuitiv interfeys orqali Starboi'ning montaj san'atiga bo‘lgan yondashuvini namoyon etadi. Saytda uning eng yaxshi ishlari, kreativ video loyihalari va xizmatlari jamlangan. Har bir sahifa — bu montajda ustalik, tafakkurda original yondashuv va harakatdagi hikoya.",
     linkProject: "https://starboi-editor.netlify.app/"
   },
 
@@ -19,7 +19,7 @@ const portfolioInformation = reactive([
       img: "/PortfolioImages/maximus.jpg",
     },
     ProjectName: "MAXIMUS",
-    Description: "EquiPath — otlar bilan bog‘liq xizmatlarga ixtisoslashgan kompaniya uchun ishlab chiqilgan zamonaviy va ishonchli veb-sayt. Ushbu sayt orqali foydalanuvchilar kompaniya faoliyati, xizmat turlari, otlar parvarishi, treninglar va bog‘lanish imkoniyatlari haqida to‘liq ma'lumotga ega bo‘lishadi.",
+    Description: "MAXIMUS — otlar bilan bog‘liq xizmatlarga ixtisoslashgan kompaniya uchun ishlab chiqilgan zamonaviy va ishonchli veb-sayt. Ushbu sayt orqali foydalanuvchilar kompaniya faoliyati, xizmat turlari, otlar parvarishi, treninglar va bog‘lanish imkoniyatlari haqida to‘liq ma'lumotga ega bo‘lishadi.",
     linkProject: "https://xojimurodov-yusuf.github.io/horse-company/"
   },
 
@@ -29,7 +29,7 @@ const portfolioInformation = reactive([
       img: "/PortfolioImages/weather.png",
     },
     ProjectName: "WEATHER APP",
-    Description: "SkyCast — real vaqtli ob-havo ma'lumotlarini aniq, sodda va chiroyli interfeysda taqdim etuvchi zamonaviy ilova. Foydalanuvchilar joriy ob-havo holati, harorat, namlik, shamol tezligi va 7 kunlik prognoz kabi muhim ma'lumotlarga tezkor kirish imkoniga ega. Ilova minimalistik dizayn, foydalanuvchi uchun qulay interfeys va responsiv (mobilga mos) tuzilma asosida ishlab chiqilgan.",
+    Description: "WEATHER — real vaqtli ob-havo ma'lumotlarini aniq, sodda va chiroyli interfeysda taqdim etuvchi zamonaviy ilova. Foydalanuvchilar joriy ob-havo holati, harorat, namlik, shamol tezligi va 7 kunlik prognoz kabi muhim ma'lumotlarga tezkor kirish imkoniga ega. Ilova minimalistik dizayn, foydalanuvchi uchun qulay interfeys va responsiv (mobilga mos) tuzilma asosida ishlab chiqilgan.",
     linkProject: "https://yusufjonxojimurodov.github.io/weatherApp/"
   },
 
