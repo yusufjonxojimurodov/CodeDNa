@@ -12,13 +12,13 @@ import InstagramIconComponent from "@/components/Icons/InstagramIconComponent.vu
 
         <div class="flex justify-center items-center gap-[10px]">
           <a target="_blank" href="https://github.com/Xojimurodov-Yusuf">
-            <github-icon-component class="w-[30px] h-[30px]"/>
+            <github-icon-component class="w-[30px] h-[30px] transition duration-300 hover:scale-[1.1]"/>
           </a>
           <a target="_blank" href="https://t.me/y_bahodirovich">
-            <telegram-icon-component class="w-[30px] h-[30px]"/>
+            <telegram-icon-component class="w-[30px] h-[30px] transition duration-300 hover:scale-[1.1]"/>
           </a>
           <a target="_blank" href="https://www.instagram.com/just_user.01/">
-            <instagram-icon-component class="w-[30px] h-[30px]"/>
+            <instagram-icon-component class="w-[30px] h-[30px] transition duration-300 hover:scale-[1.1]"/>
           </a>
         </div>
       </nav>
