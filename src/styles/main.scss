@@ -40,18 +40,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradientMove 5s ease infinite;
-
-    @keyframes gradientMove {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
+    animation-delay: 3s;
   }
 
   .contactBtn {
@@ -63,38 +52,26 @@ body {
     transition: transform 0.3s ease;
     animation: animatedGradientBtn 6s ease infinite;
 
-    @keyframes animatedGradientBtn {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-
     &:hover {
       transform: scale(1.05);
     }
 
     &:active {
-      transform: scale(-0.5);
+      transform: scale(0.8);
     }
   }
 
   header {
     padding: 1rem 5%;
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
     .header-a {
       text-decoration: none;
       color: white;
       font-size: 18px;
       font-weight: 500;
-      transition: all 0.3s ease;
+      transition: background-color 0.3s ease, color 0.3s ease;
       position: relative;
 
       &::after {
@@ -130,18 +107,6 @@ body {
       background-size: 300%;
       animation: animate-border 4s linear infinite;
       border-radius: 2px;
-    }
-
-    @keyframes animate-border {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
     }
   }
 
@@ -180,18 +145,6 @@ body {
     background: rgba(0, 0, 0, 0.3); /* semi transparent */
     backdrop-filter: blur(6px);
     transition: backdrop-filter 0.3s ease;
-
-    @keyframes borderMove {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
   }
 
   .contact-wrapper {
@@ -292,7 +245,7 @@ body {
         }
 
         &:active:not(:disabled) {
-          transform: scale(-0.9);
+          transform: scale(0.9);
         }
       }
     }
@@ -307,4 +260,52 @@ body {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
     text-align: center;
   }
+}
+
+@keyframes animatedGradientBtn {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes animate-border {
+0% {
+  background-position: 0% 50%;
+}
+50% {
+  background-position: 100% 50%;
+}
+100% {
+  background-position: 0% 50%;
+}
 }

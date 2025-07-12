@@ -1,12 +1,21 @@
 <script setup>
 import { reactive, ref, computed } from "vue";
 import ContactButtonComponent from "./ContactButtonComponent.vue";
+import { LoadingOutlined } from '@ant-design/icons-vue';
+import { h } from 'vue';
+
+const indicator = h(LoadingOutlined, {
+  style: {
+    fontSize: '60px',
+  },
+  spin: true,
+});
 
 const portfolioInformation = reactive([
   {
     id: 1,
     ProjectImg: {
-      img: "/PortfolioImages/STARBOI.jpg",
+      img: "/PortfolioImages/STARBOI.webp",
     },
     ProjectName: "STARBOI",
     Description: "STARBOI — ijodkorlik va texnik mahoratning mukammal uyg‘unligi. Ushbu portfolio sayti zamonaviy dizayn va intuitiv interfeys orqali Starboi'ning montaj san'atiga bo‘lgan yondashuvini namoyon etadi. Saytda uning eng yaxshi ishlari, kreativ video loyihalari va xizmatlari jamlangan. Har bir sahifa — bu montajda ustalik, tafakkurda original yondashuv va harakatdagi hikoya.",
@@ -16,7 +25,7 @@ const portfolioInformation = reactive([
   {
     id: 2,
     ProjectImg: {
-      img: "/PortfolioImages/maximus.jpg",
+      img: "/PortfolioImages/maximus.webp",
     },
     ProjectName: "MAXIMUS",
     Description: "MAXIMUS — otlar bilan bog‘liq xizmatlarga ixtisoslashgan kompaniya uchun ishlab chiqilgan zamonaviy va ishonchli veb-sayt. Ushbu sayt orqali foydalanuvchilar kompaniya faoliyati, xizmat turlari, otlar parvarishi, treninglar va bog‘lanish imkoniyatlari haqida to‘liq ma'lumotga ega bo‘lishadi.",
@@ -26,7 +35,7 @@ const portfolioInformation = reactive([
   {
     id: 3,
     ProjectImg: {
-      img: "/PortfolioImages/weather.png",
+      img: "/PortfolioImages/weather.webp",
     },
     ProjectName: "WEATHER APP",
     Description: "WEATHER — real vaqtli ob-havo ma'lumotlarini aniq, sodda va chiroyli interfeysda taqdim etuvchi zamonaviy ilova. Foydalanuvchilar joriy ob-havo holati, harorat, namlik, shamol tezligi va 7 kunlik prognoz kabi muhim ma'lumotlarga tezkor kirish imkoniga ega. Ilova minimalistik dizayn, foydalanuvchi uchun qulay interfeys va responsiv (mobilga mos) tuzilma asosida ishlab chiqilgan.",
@@ -36,7 +45,7 @@ const portfolioInformation = reactive([
   {
     id: 4,
     ProjectImg: {
-      img: "/PortfolioImages/postroy.jpg",
+      img: "/PortfolioImages/postroy.webp",
     },
     ProjectName: "POSTROY LANDING",
     Description: "POSTROY LANDING — zamonaviy va ishonchli qurilish materiallari kompaniyasi uchun ishlab chiqilgan funksional va estetikasiga mos veb-sayt. Sayt foydalanuvchilarga mahsulotlar katalogi, narxlar, tavsiflar va tezkor buyurtma berish imkonini taqdim etadi.  Sayt dizayni qat’iy, ishonch uyg‘otuvchi uslubda yaratilgan bo‘lib, professional korporativ imidjni aks ettiradi.",
@@ -44,6 +53,8 @@ const portfolioInformation = reactive([
   },
 ])
 
+
+const loaded = ref(false)
 const currentPage = ref(1)
 const pageSize = 1
 
@@ -74,9 +85,14 @@ function openProject(link) {
          m-auto
          shadow-lg transition-all duration-300
          mb-10 md:h-[400px] sm:h-auto">
-    <img class="rounded-xl w-[360px] h-[220px] p-[5px] md:w-[380px] md:h-[250px]" :src="project.ProjectImg.img"
-      alt="project image" />
 
+    <div class="relative">
+      <img loading="lazy" @load="loaded = true" :class="{ 'opacity-0': !loaded }"
+        class="rounded-xl w-[360px] h-[220px] p-[5px] md:w-[380px] md:h-[250px]" :src="project.ProjectImg.img"
+        alt="project image" />
+      <a-spin v-if="!loaded" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        :indicator="indicator"></a-spin>
+    </div>
     <div class="flex flex-col justify-center items-center text-center gap-[10px] sm:gap-[20px]">
       <p class="about-text text-2xl sm:text-3xl md:text-[40px] font-semibold text-white mb-2 pb-[6px]">
         {{ project.ProjectName }}

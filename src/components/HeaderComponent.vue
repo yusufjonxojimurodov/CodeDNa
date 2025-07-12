@@ -1,9 +1,14 @@
 <script setup>
-import ContactButtonComponent from "@/components/HelperComponents/ContactButtonComponent.vue";
-import BurgerIconComponent from "@/components/Icons/BurgerIconComponent.vue";
-import BurgerComponent from "@/components/BurgerComponent.vue";
-import {ref} from "vue";
-
+import { ref, defineAsyncComponent } from "vue";
+const ContactButtonComponent = defineAsyncComponent(() =>
+  import('@/components/HelperComponents/ContactButtonComponent.vue')
+)
+const BurgerIconComponent = defineAsyncComponent(() =>
+  import('@/components/Icons/BurgerIconComponent.vue')
+)
+const BurgerComponent = defineAsyncComponent(() =>
+  import('@/components/BurgerComponent.vue')
+)
 const isBurgerOpen = ref(false)
 </script>
 
@@ -21,10 +26,9 @@ const isBurgerOpen = ref(false)
           <li><a class="header-a" href="#skills">Tajriba</a></li>
         </ul>
 
-        <burger-component :is-open="isBurgerOpen" @close="isBurgerOpen = false"/>
-        <burger-icon-component @click="isBurgerOpen = true"/>
-        <contact-button-component class="contactbtn"><a
-            href="#contact">Bog'lanish</a></contact-button-component>
+        <burger-component :is-open="isBurgerOpen" @close="isBurgerOpen = false" />
+        <burger-icon-component @click="isBurgerOpen = true" />
+        <contact-button-component class="contactbtn"><a href="#contact">Bog'lanish</a></contact-button-component>
       </nav>
     </div>
   </header>
