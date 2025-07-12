@@ -14,7 +14,8 @@ const en = {
 
     about: {
         about: "About me",
-        aboutMe: "Hello! I'm a frontend developer passionate about building modern web applications. My main focus is on the Vue.js ecosystem, and I have solid experience with JavaScript, HTML, and CSS. I work effectively on real-world projects using Pinia for state management, Axios for API integration, Ant Design Vue for building user interfaces, and Sass for writing optimized and maintainable styles."
+        aboutMe: "Hello! I'm a frontend developer passionate about building modern web applications. My main focus is on the Vue.js ecosystem, and I have solid experience with JavaScript, HTML, and CSS. I work effectively on real-world projects using Pinia for state management, Axios for API integration, Ant Design Vue for building user interfaces, and Sass for writing optimized and maintainable styles.",
+        more: "More"
     },
 
     skill: {
