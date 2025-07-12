@@ -19,7 +19,7 @@ const formDisable = computed(() => {
 async function clientMessage() {
   const regexNumber = /^[0-9]{9}$/;
   const regexLetters = /^[A-Za-z\s]+$/;
-  const regexNumberFour = /^(?:\D*\d\D*){1,4}$/;
+  const regexNumberFour = /^([A-Za-z\s\d$€₽₩₸₺₹₴₦₿UZSsom’']*){0,6}$/;
   const textMessage = `Mijoz ismi: ${formContact.value.name} \nMijos Xabari: ${formContact.value.messageClient} \nMijoz Raqami: ${firstNumber.value + formContact.value.number}`
 
   if (formContact.value.name.length <= 2) {
