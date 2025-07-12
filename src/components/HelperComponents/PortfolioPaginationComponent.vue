@@ -1,8 +1,11 @@
 <script setup>
-import { reactive, ref, computed } from "vue";
+import {ref, computed } from "vue";
+import { useI18n } from 'vue-i18n'
 import ContactButtonComponent from "./ContactButtonComponent.vue";
 import { LoadingOutlined } from '@ant-design/icons-vue';
 import { h } from 'vue';
+
+const { t } = useI18n()
 
 const indicator = h(LoadingOutlined, {
   style: {
@@ -11,14 +14,14 @@ const indicator = h(LoadingOutlined, {
   spin: true,
 });
 
-const portfolioInformation = reactive([
+const portfolioInformation = computed( () => [
   {
     id: 1,
     ProjectImg: {
       img: "/PortfolioImages/STARBOI.webp",
     },
-    ProjectName: "STARBOI",
-    Description: "STARBOI — ijodkorlik va texnik mahoratning mukammal uyg‘unligi. Ushbu portfolio sayti zamonaviy dizayn va intuitiv interfeys orqali Starboi'ning montaj san'atiga bo‘lgan yondashuvini namoyon etadi. Saytda uning eng yaxshi ishlari, kreativ video loyihalari va xizmatlari jamlangan. Har bir sahifa — bu montajda ustalik, tafakkurda original yondashuv va harakatdagi hikoya.",
+    ProjectName: t('portfolio.starboi.name'),
+    Description: t('portfolio.starboi.description'),
     linkProject: "https://starboi-editor.netlify.app/"
   },
 
@@ -27,8 +30,8 @@ const portfolioInformation = reactive([
     ProjectImg: {
       img: "/PortfolioImages/maximus.webp",
     },
-    ProjectName: "MAXIMUS",
-    Description: "MAXIMUS — otlar bilan bog‘liq xizmatlarga ixtisoslashgan kompaniya uchun ishlab chiqilgan zamonaviy va ishonchli veb-sayt. Ushbu sayt orqali foydalanuvchilar kompaniya faoliyati, xizmat turlari, otlar parvarishi, treninglar va bog‘lanish imkoniyatlari haqida to‘liq ma'lumotga ega bo‘lishadi.",
+    ProjectName: t('portfolio.maximus.name'),
+    Description: t('portfolio.maximus.description'),
     linkProject: "https://xojimurodov-yusuf.github.io/horse-company/"
   },
 
@@ -37,8 +40,8 @@ const portfolioInformation = reactive([
     ProjectImg: {
       img: "/PortfolioImages/weather.webp",
     },
-    ProjectName: "WEATHER APP",
-    Description: "WEATHER — real vaqtli ob-havo ma'lumotlarini aniq, sodda va chiroyli interfeysda taqdim etuvchi zamonaviy ilova. Foydalanuvchilar joriy ob-havo holati, harorat, namlik, shamol tezligi va 7 kunlik prognoz kabi muhim ma'lumotlarga tezkor kirish imkoniga ega. Ilova minimalistik dizayn, foydalanuvchi uchun qulay interfeys va responsiv (mobilga mos) tuzilma asosida ishlab chiqilgan.",
+    ProjectName: t('portfolio.weather.name'),
+    Description: t('portfolio.weather.description'),
     linkProject: "https://yusufjonxojimurodov.github.io/weatherApp/"
   },
 
@@ -47,8 +50,8 @@ const portfolioInformation = reactive([
     ProjectImg: {
       img: "/PortfolioImages/postroy.webp",
     },
-    ProjectName: "POSTROY LANDING",
-    Description: "POSTROY LANDING — zamonaviy va ishonchli qurilish materiallari kompaniyasi uchun ishlab chiqilgan funksional va estetikasiga mos veb-sayt. Sayt foydalanuvchilarga mahsulotlar katalogi, narxlar, tavsiflar va tezkor buyurtma berish imkonini taqdim etadi.  Sayt dizayni qat’iy, ishonch uyg‘otuvchi uslubda yaratilgan bo‘lib, professional korporativ imidjni aks ettiradi.",
+    ProjectName: t('portfolio.postroy.name'),
+    Description: t('portfolio.postroy.description'),
     linkProject: "https://xojimurodov-yusuf.github.io/pastroyy/"
   },
 ])
@@ -61,7 +64,7 @@ const pageSize = 1
 const currentProject = computed(() => {
   const start = (currentPage.value - 1) * pageSize
   const end = start + pageSize
-  return portfolioInformation.slice(start, end)
+  return portfolioInformation.value.slice(start, end)
 })
 
 const handleChange = (page) => {
@@ -103,8 +106,7 @@ function openProject(link) {
     </div>
 
     <contact-button-component @click="() => openProject(project.linkProject)"
-      class="relative bottom-4 md:top-[40%] md:right-[30.5%]">Loyihani
-      ko'rish</contact-button-component>
+      class="relative bottom-4 md:top-[40%] md:right-[30.5%]">{{ t('portfolio.seeProject') }}</contact-button-component>
   </div>
 
   <div class="flex justify-center">

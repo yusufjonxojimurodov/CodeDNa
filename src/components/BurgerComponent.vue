@@ -1,6 +1,7 @@
 <script setup>
 import CloseIconComponent from "@/components/Icons/CloseIconComponent.vue";
 import {defineProps, defineEmits} from "vue";
+import LanguageSelectComponent from "./HelperComponents/LanguageSelectComponent.vue";
 
 defineProps({
   isOpen: Boolean,
@@ -19,6 +20,7 @@ const emit = defineEmits(["close"])
           <li><a class="header-a" href="#portfolio" @click="emit('close')">Portfolio</a></li>
           <li><a class="header-a" href="#about" @click="emit('close')">Men Haqimda</a></li>
           <li><a class="header-a" href="#skills" @click="emit('close')">Tajriba</a></li>
+          <language-select-component :insideBurger="true"/>
         </ul>
 
         <close-icon-component @click="emit('close')" class="w-[40px] h-[40px] absolute top-3 right-2"/>
@@ -35,7 +37,7 @@ const emit = defineEmits(["close"])
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3); /* fonni sekin qoraytiradi */
+  background: rgba(0, 0, 0, 0.3);
   z-index: 9998;
 }
 

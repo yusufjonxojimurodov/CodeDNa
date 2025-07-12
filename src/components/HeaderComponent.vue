@@ -1,5 +1,9 @@
 <script setup>
+import { useI18n } from "vue-i18n";
 import { ref, defineAsyncComponent } from "vue";
+import LanguageSelectComponent from "./HelperComponents/LanguageSelectComponent.vue";
+
+const { t } = useI18n()
 const ContactButtonComponent = defineAsyncComponent(() =>
   import('@/components/HelperComponents/ContactButtonComponent.vue')
 )
@@ -19,32 +23,42 @@ const isBurgerOpen = ref(false)
         <span class="animated-gradient text-[40px] font-bold">
           CodeDna</span>
 
-        <ul class="flex justify-center items-center gap-[40px]">
-          <li><a class="header-a" href="#header">Uy</a></li>
-          <li><a class="header-a" href="#portfolio">Portfolio</a></li>
-          <li><a class="header-a" href="#about">Men Haqimda</a></li>
-          <li><a class="header-a" href="#skills">Tajriba</a></li>
-        </ul>
+        <div class="ul flex justify-center items-center gap-[40px]">
+          <li><a class="header-a" href="#header">{{ t('navigation.home') }}</a></li>
+          <li><a class="header-a" href="#portfolio">{{ t('navigation.portfolio') }}</a></li>
+          <li><a class="header-a" href="#about">{{ t('navigation.about') }}</a></li>
+          <li><a class="header-a" href="#skills">{{ t('navigation.skill') }}</a></li>
+          <li><a class="header-a" href="#contact">{{ t('navigation.contact') }}</a></li>
+        </div>
 
         <burger-component :is-open="isBurgerOpen" @close="isBurgerOpen = false" />
         <burger-icon-component @click="isBurgerOpen = true" />
-        <contact-button-component class="contactbtn"><a href="#contact">Bog'lanish</a></contact-button-component>
+        <language-select-component class="lang-select" />
       </nav>
     </div>
   </header>
 </template>
 
 <style scoped>
+.lang-select {
+  position: relative;
+  right: 0;
+}
+
 @media (max-width: 768px) {
   .container {
     width: 98%;
   }
 
-  ul {
+  .ul {
     display: none;
   }
 
   .contactbtn {
+    display: none;
+  }
+
+  .lang-select {
     display: none;
   }
 }

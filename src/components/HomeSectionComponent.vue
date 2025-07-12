@@ -11,11 +11,10 @@ import ContactButtonComponent from "@/components/HelperComponents/ContactButtonC
             Xojimurodov Yusuf
           </h1>
           <p class="text-white text-[15px] sm:text-[16px] md:text-[18px] max-w-full sm:max-w-[500px]">
-            Zamonaviy web texnologiyalar va innovatsion yechimlar bilan
-            sizning g'oyalaringizni hayotga tatbiq etuvchi CodeDNA
+            {{ $t('home.aboutCodeDna') }}
           </p>
           <contact-button-component>
-            <a href="#about">Men Haqimda</a>
+            <a href="#about">{{ $t('home.about') }}</a>
           </contact-button-component>
         </div>
       </div>

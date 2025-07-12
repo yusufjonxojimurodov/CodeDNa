@@ -12,7 +12,8 @@
     "ant-design-vue": "^4.0.0-rc.6",
     "aos": "^2.3.4",
     "axios": "^1.10.0",
-    "vue": "^3.5.17"
+    "vue": "^3.5.17",
+    "vue-i18n": "^11.1.9"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.0",

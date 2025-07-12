@@ -1,16 +1,18 @@
 <script setup>
-import { reactive, markRaw } from "vue";
+import { useI18n } from 'vue-i18n'
+import {markRaw, computed } from "vue";
 import IconWebComponent from "@/components/Icons/IconWebComponent.vue";
 import IconMobileComponent from "@/components/Icons/IconMobileComponent.vue";
 import IconLibraryComponent from "@/components/Icons/IconLibraryComponent.vue";
 
-const skillsInformation = reactive([
+const { t } = useI18n()
+
+const skillsInformation = computed(() => [
   {
     id: 1,
     skillIcon: markRaw(IconWebComponent),
-    skillName: "Web Developer",
-    description:
-      "HTML, CSS, JAVASCRIPT, VUE JS va boshqa zamonaviy web texnologiyalaridan foydalanib web saytlar yaratish tajribasiga egaman",
+    skillName: t('skill.webDeveloper.name'),
+    description: t('skill.webDeveloper.description'),
     iconFramework: {
       imgFramework: [
         "/TechnologyIcons/Vue.png",
@@ -24,9 +26,8 @@ const skillsInformation = reactive([
   {
     id: 2,
     skillIcon: markRaw(IconMobileComponent),
-    skillName: "Mobile Developer",
-    description:
-      "VUE JS, SASS, Capacitor yordamida smartfonlar uchun ilovalar yaratish tajribasiga egaman",
+    skillName: t('skill.mobileDeveloper.name'),
+    description: t('skill.mobileDeveloper.description'),
     iconFramework: {
       imgFramework: [
         "/TechnologyIcons/Vue.png",
@@ -40,9 +41,8 @@ const skillsInformation = reactive([
   {
     id: 3,
     skillIcon: markRaw(IconLibraryComponent),
-    skillName: "Library",
-    description:
-      "VUE JSdagi asosiy kutubxonalardan biri 'PINIA' global ma'lumotlarni barcha componentlar yordamida boshqara olaman",
+    skillName: t('skill.library.name'),
+    description: t('skill.library.description'),
     iconFramework: {
       imgFramework: [
         "/TechnologyIcons/Vue.png",
@@ -62,7 +62,7 @@ const skillsInformation = reactive([
       <div class="text-center mb-12">
         <p data-aos="fade-right"
           class="about-text pb-[22px] text-3xl sm: w-full md:text-[58px] lg:w-[50%] font-bold leading-tight">
-          Mening Tajribalarim
+          {{ t('skill.mySkill') }}
         </p>
       </div>
 
