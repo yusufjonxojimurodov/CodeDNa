@@ -1,5 +1,5 @@
 <script setup>
-import {ref, computed } from "vue";
+import { ref, computed } from "vue";
 import { useI18n } from 'vue-i18n'
 import ContactButtonComponent from "./ContactButtonComponent.vue";
 import { LoadingOutlined } from '@ant-design/icons-vue';
@@ -14,45 +14,54 @@ const indicator = h(LoadingOutlined, {
   spin: true,
 });
 
-const portfolioInformation = computed( () => [
+const portfolioInformation = computed(() => [
   {
     id: 1,
+    ProjectImg: {
+      img: "/PortfolioImages/Savdo X.png",
+    },
+    ProjectName: t('portfolio.savdoX.name'),
+    Description: t('portfolio.savdoX.description'),
+    linkProject: "https://practicesavdox.netlify.app"
+  },
+  {
+    id: 2,
     ProjectImg: {
       img: "/PortfolioImages/STARBOI.webp",
     },
     ProjectName: t('portfolio.starboi.name'),
     Description: t('portfolio.starboi.description'),
-    linkProject: "https://starboi-editor.netlify.app/"
-  },
-
-  {
-    id: 2,
-    ProjectImg: {
-      img: "/PortfolioImages/maximus.webp",
-    },
-    ProjectName: t('portfolio.maximus.name'),
-    Description: t('portfolio.maximus.description'),
-    linkProject: "https://xojimurodov-yusuf.github.io/horse-company/"
+    linkProject: "https://starboi-editor.netlify.app"
   },
 
   {
     id: 3,
     ProjectImg: {
-      img: "/PortfolioImages/weather.webp",
+      img: "/PortfolioImages/maximus.webp",
     },
-    ProjectName: t('portfolio.weather.name'),
-    Description: t('portfolio.weather.description'),
-    linkProject: "https://yusufjonxojimurodov.github.io/weatherApp/"
+    ProjectName: t('portfolio.maximus.name'),
+    Description: t('portfolio.maximus.description'),
+    linkProject: "https://xojimurodov-yusuf.github.io/horse-company"
   },
 
   {
     id: 4,
     ProjectImg: {
+      img: "/PortfolioImages/weather.webp",
+    },
+    ProjectName: t('portfolio.weather.name'),
+    Description: t('portfolio.weather.description'),
+    linkProject: "https://yusufjonxojimurodov.github.io/weatherApp"
+  },
+
+  {
+    id: 5,
+    ProjectImg: {
       img: "/PortfolioImages/postroy.webp",
     },
     ProjectName: t('portfolio.postroy.name'),
     Description: t('portfolio.postroy.description'),
-    linkProject: "https://xojimurodov-yusuf.github.io/pastroyy/"
+    linkProject: "https://xojimurodov-yusuf.github.io/pastroyy"
   },
 ])
 

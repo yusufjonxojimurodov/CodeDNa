@@ -60,6 +60,11 @@ const uz = {
             description: "POSTROY LANDING — zamonaviy va ishonchli qurilish materiallari kompaniyasi uchun ishlab chiqilgan funksional va estetikasiga mos veb-sayt. Sayt foydalanuvchilarga mahsulotlar katalogi, narxlar, tavsiflar va tezkor buyurtma berish imkonini taqdim etadi. Sayt dizayni qat’iy, ishonch uyg‘otuvchi uslubda yaratilgan bo‘lib, professional korporativ imidjni aks ettiradi."
         },
 
+        savdoX: {
+            name: "Savdo X",
+            description: "SAVDO X — bu web sahifa texnikalar online bozori hisoblanadi. Ya'ni bizning sotuvchilar o'z mahsulotlarini online tarzda qulay sahifamizda sotuvga qo'yishlari, mijozlar esa qulay tarzda uyda o'tirgan holda mahsulotlarni harid qila olishlari mumkin hisoblanadi. Sahifamizda mijozlar va sotuvchilarning xavfsizliklari to'laqonli ta'minlangan."
+        },
+
         seeProject: "Loyihani korish"
     },
 
